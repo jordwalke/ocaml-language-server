@@ -36,6 +36,7 @@ export default class Session implements server.Disposable {
   }
 
   public async initialize(): Promise<void> {
+    await this.environment.initialize();
     await this.merlin.initialize();
     await this.indexer.initialize();
     await this.synchronizer.initialize();
@@ -49,6 +50,10 @@ export default class Session implements server.Disposable {
 
   public log(data: any): void {
     this.connection.console.log(JSON.stringify(data, null as any, 2)); // tslint:disable-line
+  }
+
+  public error(data: any): void {
+    this.connection.console.error(JSON.stringify(data, null as any, 2)); // tslint:disable-line
   }
 
   public onDidChangeConfiguration({
