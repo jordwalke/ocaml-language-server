@@ -19,7 +19,7 @@ export default class Environment implements server.Disposable {
   }
 
   /**
-   * Projects may optionally generate a command-env-exec runner script.
+   * Projects may optionally generate a command-exec runner script.
    * By outputting this file, projects are opting into having IDE features,
    * executed through a command wrapper which will ensure that all the
    * right build tools and dependencies are made available.
@@ -79,8 +79,8 @@ export default class Environment implements server.Disposable {
           "build",
           "bin",
           process.platform === "win32"
-            ? "command-env-exec.bat"
-            : "command-env-exec",
+            ? "command-exec.bat"
+            : "command-exec",
         );
   }
 

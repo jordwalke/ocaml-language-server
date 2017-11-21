@@ -9,9 +9,9 @@ export default function(
     for (const id of event.changes) {
       if (/\.(ml|re)$/.test(id.uri)) return session.indexer.refreshSymbols(id);
       if (/\.(merlin)$/.test(id.uri)) return command.restartMerlin(session);
-      if (/(command-env-exec)$/.test(id.uri))
+      if (/(command-exec)$/.test(id.uri))
         return command.restartMerlin(session);
-      if (/(command-env-exec.cmd)$/.test(id.uri))
+      if (/(command-exec.cmd)$/.test(id.uri))
         return command.restartMerlin(session);
     }
   };
