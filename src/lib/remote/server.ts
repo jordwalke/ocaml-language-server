@@ -18,6 +18,20 @@ export const giveMerlinFiles = new RequestType<
   void
 >("reason.server.giveMerlinFiles");
 
+export const giveAvailableLibraries = new RequestType<
+  types.TextDocumentIdentifier,
+  string[],
+  void,
+  void
+>("reason.server.giveAvailableLibraries");
+
+export const giveProjectEnv = new RequestType<
+  types.TextDocumentIdentifier,
+  string[],
+  void,
+  void
+>("reason.server.giveProjectEnv");
+
 export const giveFormatted = new RequestType<
   types.IUnformattedTextDocument,
   null | string,

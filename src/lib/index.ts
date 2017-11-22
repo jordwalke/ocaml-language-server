@@ -15,10 +15,12 @@ export interface ISettings {
     };
     diagnostics: {
       merlinPerfLogging: boolean;
-      tools: Array<"merlin" | "bsb">;
+      tools: Array<"merlin" | "bsb" | "esy">;
     };
     path: {
       bsb: string;
+      env: string;
+      esy: string;
       ocamlfind: string;
       ocamlmerlin: string;
       opam: string;
@@ -48,6 +50,8 @@ export namespace ISettings {
       },
       path: {
         bsb: "bsb",
+        env: "env",
+        esy: "esy",
         ocamlfind: "ocamlfind",
         ocamlmerlin: "ocamlmerlin",
         opam: "opam",

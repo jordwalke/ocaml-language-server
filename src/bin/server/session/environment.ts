@@ -78,9 +78,7 @@ export default class Environment implements server.Disposable {
           "_esy",
           "build",
           "bin",
-          process.platform === "win32"
-            ? "command-exec.bat"
-            : "command-exec",
+          process.platform === "win32" ? "command-exec.bat" : "command-exec",
         );
   }
 

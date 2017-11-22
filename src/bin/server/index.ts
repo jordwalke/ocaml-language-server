@@ -34,6 +34,8 @@ session.connection.onWorkspaceSymbol(feature.workspaceSymbol(session));
 // vscode-reasonml features
 session.connection.onRequest(remote.server.giveCaseAnalysis, request.giveCaseAnalysis(session));
 session.connection.onRequest(remote.server.giveMerlinFiles, request.giveMerlinFiles(session));
+session.connection.onRequest(remote.server.giveAvailableLibraries, request.giveAvailableLibraries(session));
+session.connection.onRequest(remote.server.giveProjectEnv, request.giveProjectEnv(session));
 session.connection.onRequest(remote.server.giveFormatted, request.giveFormatted(session));
 
 session.listen();
